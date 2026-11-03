@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MMA, K1 un grapplinga treniņi Daugavpilī bērniem un pieaugušajiem. Daugavpils Top Team un Daugavpils Grappling Team, Dzirnavu iela 20.">
+<link rel="canonical" href="https://daugavpilstopteam.lv/">
+<title>Daugavpils Top Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap&subset=cyrillic,latin-ext">
+<style>
+html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: tatami-grid hero with a giant "4×" title count; two club blocks (carmine = Top Team, ink = Grappling Team) colour-key the weekly grid */
+:root{
+  --paper:#f3f2ef; --surface:#ffffff; --ink:#16202e; --muted:#5b6472;
+  --line:#d9d8d3; --mat:#e7e5df; --carmine:#9e3039; --carmine-ink:#ffffff;
+  --gt:#16202e; --gt-ink:#f3f2ef;
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "Consolas", monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#11161e; --surface:#18202b; --ink:#eef0f3; --muted:#9aa3b1;
+  --line:#2a3442; --mat:#1a222d; --carmine:#d0505b; --carmine-ink:#ffffff;
+  --gt:#dfe3ea; --gt-ink:#11161e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11161e; --surface:#18202b; --ink:#eef0f3; --muted:#9aa3b1;
+  --line:#2a3442; --mat:#1a222d; --carmine:#d0505b; --carmine-ink:#ffffff;
+  --gt:#dfe3ea; --gt-ink:#11161e; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 1rem/1.6 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--carmine);outline-offset:2px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.bar{display:flex;align-items:center;gap:16px;padding-block:12px;flex-wrap:wrap}
+.logo{font:700 .95rem/1 var(--display);letter-spacing:.02em;text-decoration:none;margin-right:auto}
+.logo span{color:var(--carmine)}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;font-size:.92rem;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.lang button{font:500 .78rem/1 var(--mono);letter-spacing:.06em;padding:8px 10px;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+@media (max-width:760px){nav{display:none}}
+
+.hero{background:
+  repeating-linear-gradient(90deg,transparent 0 119px,var(--line) 119px 120px),
+  repeating-linear-gradient(0deg,transparent 0 59px,var(--line) 59px 60px),
+  var(--mat);border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;padding-block:64px 56px}
+.eyebrow{font:500 .78rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--carmine)}
+h1{font:900 clamp(2.1rem,5.6vw,3.8rem)/1.02 var(--display);margin:14px 0 6px;text-wrap:balance;letter-spacing:-.01em}
+.h1b{font:700 clamp(1.1rem,2.6vw,1.6rem)/1.15 var(--display);margin:0 0 18px;color:var(--muted)}
+.h1b span{color:var(--ink)}
+.lead{font-size:1.1rem;max-width:34em;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--carmine);border-color:var(--carmine);color:var(--carmine-ink)}
+.count{justify-self:end;text-align:right}
+.count .big{font:900 clamp(6rem,16vw,11rem)/.85 var(--display);color:var(--carmine);letter-spacing:-.04em}
+.count p{margin:10px 0 0 auto;font-weight:600;max-width:16em}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:40px}.count{justify-self:start;text-align:left}.count p{margin-left:0}}
+
+section{padding-block:56px;border-bottom:1px solid var(--line)}
+h2{font:700 clamp(1.4rem,3vw,1.9rem)/1.15 var(--display);margin:0 0 8px;text-wrap:balance}
+.intro{color:var(--muted);margin:0 0 28px;max-width:40em}
+
+.clubs{display:flex;flex-direction:column;gap:28px}
+.club{border-top:4px solid var(--carmine);padding-top:18px}
+.club.gt{border-top-color:var(--gt)}
+.club-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.club-head h3{font:700 clamp(1.1rem,2.4vw,1.35rem)/1.2 var(--display);margin:0}
+.club-head a{font-weight:500;color:var(--muted);font-size:.9rem;text-underline-offset:3px}
+.tag{font:500 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--carmine);display:block;margin-top:6px}
+.club.gt .tag{color:var(--muted)}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.group h4{font:700 1rem/1.25 var(--display);margin:0}
+.when{font:500 .83rem/1.4 var(--mono);color:var(--carmine);font-variant-numeric:tabular-nums}
+.club.gt .when{color:var(--ink)}
+.group p{margin:0;color:var(--muted)}
+
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:-12px 0 18px;font-size:.88rem;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--carmine)}
+.legend i.g{background:var(--gt)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:10px 8px;min-height:160px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.day.off{background:transparent;border-style:dashed}
+.day b{font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.slot{border-radius:4px;padding:6px 7px;font-size:.8rem;line-height:1.3;background:var(--carmine);color:var(--carmine-ink)}
+.slot.gt{background:var(--gt);color:var(--gt-ink)}
+.slot span{display:block;font:500 .72rem/1.3 var(--mono);opacity:.88;font-variant-numeric:tabular-nums}
+@media (max-width:760px){.week{grid-template-columns:1fr}.day{min-height:0}.day.off{display:none}}
+
+.method{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;counter-reset:m}
+.method div{border-top:3px solid var(--ink);padding-top:14px;min-width:0}
+.method div::before{counter-increment:m;content:counter(m);font:500 .8rem/1 var(--mono);color:var(--carmine)}
+.method h3{font:700 1rem/1.3 var(--display);margin:8px 0}
+.method p{margin:0;color:var(--muted)}
+@media (max-width:860px){.method{grid-template-columns:1fr}}
+
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.price h3{font:700 1rem/1.3 var(--display);margin:0}
+.price .sub{font:500 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--carmine);margin-bottom:4px}
+.price .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.price .row span{color:var(--muted)}
+.price .row b{font:900 1.7rem/1 var(--display);font-variant-numeric:tabular-nums;white-space:nowrap}
+.price p{margin:0;color:var(--muted);font-size:.92rem}
+@media (max-width:860px){.prices{grid-template-columns:1fr;max-width:480px}}
+.note{margin-top:16px;color:var(--muted);font-size:.92rem;max-width:40em}
+
+
+.coach{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.creds{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.creds li{font:500 .78rem/1 var(--mono);border:1px solid var(--line);border-radius:999px;padding:8px 12px}
+.champs{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--carmine);border-radius:8px;padding:22px}
+.champs h3{font:700 1rem/1.3 var(--display);margin:0 0 12px}
+.tl{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;border-bottom:1px solid var(--line);padding-block:10px}
+.tl li:last-child{border-bottom:0}
+.tl .yr{font:500 .9rem/1.5 var(--mono);color:var(--carmine);font-variant-numeric:tabular-nums}
+.tl b{display:block;font-weight:600}
+.tl em{display:block;font-style:normal;color:var(--muted);font-size:.9rem;margin-bottom:6px}
+.tl em:last-child{margin-bottom:0}
+.champs .fn{margin:12px 0 0;color:var(--muted);font-size:.85rem}
+@media (max-width:860px){.coach{grid-template-columns:1fr}}
+
+.contacts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;min-width:0}
+.contact b{display:block;font:500 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.contact .val{font-weight:600;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.links a{color:var(--carmine);font-weight:600;text-underline-offset:3px}
+.links span{display:block;color:var(--muted);font-size:.85rem;overflow-wrap:anywhere}
+.contact .more{display:inline-block;margin-top:10px;color:var(--carmine);font-weight:500;font-size:.9rem;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+@media (max-width:760px){.contacts{grid-template-columns:1fr}}
+footer{padding-block:28px;color:var(--muted);font-size:.85rem}
+section,.hero{scroll-margin-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap bar">
+  <a class="logo" href="#top">Daugavpils <span>Top Team</span></a>
+  <nav>
+    <a href="#clubs" data-i="nav_groups"></a>
+    <a href="#schedule" data-i="nav_schedule"></a>
+    <a href="#prices" data-i="nav_prices"></a>
+    <a href="#coach" data-i="nav_coach"></a>
+    <a href="#contacts" data-i="nav_contacts"></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Valoda / Язык / Language">
+    <button type="button" data-lang="lv">LV</button>
+    <button type="button" data-lang="ru">RU</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <div>
+    <div class="eyebrow">Daugavpils · MMA · K1 · Grappling</div>
+    <h1>Daugavpils Top Team</h1>
+    <p class="h1b">&amp; <span>Daugavpils Grappling Team</span></p>
+    <p class="lead" data-i="lead"></p>
+    <div class="cta">
+      <a class="btn primary" href="#contacts" data-i="cta_join"></a>
+      <a class="btn" href="#schedule" data-i="cta_sched"></a>
+    </div>
+  </div>
+  <div class="count">
+    <div class="big">3×</div>
+    <p data-i="count"></p>
+  </div>
+</div></div>
+
+<main>
+<section id="clubs"><div class="wrap">
+  <h2 data-i="groups_h"></h2>
+  <p class="intro" data-i="groups_intro"></p>
+  <div class="clubs">
+    <div class="club tt">
+      <div class="club-head">
+        <div><h3>Daugavpils Top Team</h3><span class="tag">MMA · K1</span></div>
+        <a href="https://www.instagram.com/daugavpils_top_team_mma/" target="_blank" rel="noopener">@daugavpils_top_team_mma</a>
+      </div>
+      <div class="groups">
+        <article class="group"><h4 data-i="g1_t"></h4><div class="when" data-i="g1_w"></div><p data-i="g1_p"></p></article>
+        <article class="group"><h4 data-i="g4_t"></h4><div class="when" data-i="g4_w"></div><p data-i="g4_p"></p></article>
+        <article class="group"><h4 data-i="g5_t"></h4><div class="when" data-i="g5_w"></div><p data-i="g5_p"></p></article>
+      </div>
+    </div>
+    <div class="club gt">
+      <div class="club-head">
+        <div><h3>Daugavpils Grappling Team</h3><span class="tag">Grappling · no-gi</span></div>
+        <a href="https://www.instagram.com/daugavpils_grappling_team/" target="_blank" rel="noopener">@daugavpils_grappling_team</a>
+      </div>
+      <div class="groups">
+        <article class="group"><h4 data-i="g3_t"></h4><div class="when" data-i="g3_w"></div><p data-i="g3_p"></p></article>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="schedule"><div class="wrap">
+  <h2 data-i="sched_h"></h2>
+  <p class="intro" data-i="sched_intro"></p>
+  <div class="legend"><span><i></i>Daugavpils Top Team</span><span><i class="g"></i>Daugavpils Grappling Team</span></div>
+  <div class="week" id="week"></div>
+</div></section>
+
+<section id="method"><div class="wrap">
+  <h2 data-i="method_h"></h2>
+  <p class="intro" data-i="method_intro"></p>
+  <div class="method">
+    <div><h3 data-i="m1_t"></h3><p data-i="m1_p"></p></div>
+    <div><h3 data-i="m2_t"></h3><p data-i="m2_p"></p></div>
+    <div><h3 data-i="m3_t"></h3><p data-i="m3_p"></p></div>
+  </div>
+</div></section>
+
+<section id="prices"><div class="wrap">
+  <h2 data-i="prices_h"></h2>
+  <p class="intro" data-i="prices_intro"></p>
+  <div class="prices">
+    <div class="price"><h3>Daugavpils Top Team</h3><span class="sub">MMA · K1</span><div class="row"><span data-i="month"></span><b>45 €</b></div><div class="row"><span data-i="single"></span><b>6 €</b></div></div>
+    <div class="price"><h3>Daugavpils Grappling Team</h3><span class="sub">Grappling · no-gi</span><div class="row"><span data-i="month"></span><b>40 €</b></div><div class="row"><span data-i="single"></span><b>5 €</b></div></div>
+    <div class="price"><h3 data-i="pr3_t"></h3><div class="row"><span data-i="indiv"></span><b>25 €</b></div><p data-i="pr3_p"></p></div>
+  </div>
+  <p class="note" data-i="prices_note"></p>
+</div></section>
+
+<section id="coach"><div class="wrap coach">
+  <div>
+    <h2>Dainis Miglāns</h2>
+    <p class="intro" style="margin-bottom:0" data-i="coach_role"></p>
+    <p data-i="coach_p"></p>
+    <ul class="creds">
+      <li data-i="cred1"></li>
+      <li data-i="cred2"></li>
+    </ul>
+  </div>
+  <div class="champs">
+    <h3 data-i="champs_h"></h3>
+    <ol class="tl">
+      <li><span class="yr">2023</span><div><b data-i="n_dan"></b><em data-i="r_pank"></em></div></li>
+      <li><span class="yr">2024</span><div><b data-i="n_vik"></b><em data-i="r_vik24"></em></div></li>
+      <li><span class="yr">2025</span><div><b data-i="n_vik"></b><em data-i="r_bronze"></em></div></li>
+      <li><span class="yr">2026</span><div><b data-i="n_vik"></b><em data-i="r_mma"></em></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="contacts"><div class="wrap">
+  <h2 data-i="contacts_h"></h2>
+  <p class="intro" data-i="contacts_intro"></p>
+  <div class="contacts">
+    <div class="contact"><b data-i="c_addr"></b><div class="val">Dzirnavu iela 20, Daugavpils, LV-5401</div><a class="more" href="https://www.google.com/maps/search/?api=1&query=Daugavpils+Top+Team+MMA+Dzirnavu+iela+20+Daugavpils" target="_blank" rel="noopener" data-i="map"></a></div>
+    <div class="contact"><b data-i="c_phone"></b><div class="val" id="phone">+371 27 167 013</div><button type="button" class="more copy" id="copyPhone" data-i="copy"></button></div>
+    <div class="contact"><b data-i="c_social"></b>
+      <ul class="links">
+        <li><a href="https://www.instagram.com/daugavpils_top_team_mma/" target="_blank" rel="noopener">Instagram · Top Team</a><span>@daugavpils_top_team_mma</span></li>
+        <li><a href="https://www.instagram.com/daugavpils_grappling_team/" target="_blank" rel="noopener">Instagram · Grappling Team</a><span>@daugavpils_grappling_team</span></li>
+        <li><a href="https://smoothcomp.com/en/club/48372" target="_blank" rel="noopener">Smoothcomp</a><span data-i="l_smooth"></span></li>
+        <li><a href="https://ajptour.com/ru/club/11008" target="_blank" rel="noopener">AJP Tour</a><span data-i="l_ajp"></span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Daugavpils Top Team · Daugavpils Grappling Team</div></footer>
+
+<script>
+const T={
+lv:{nav_groups:"Klubi",nav_schedule:"Grafiks",nav_prices:"Cenas",nav_coach:"Treneris",nav_contacts:"Kontakti",
+lead:"Cīņas sporta veidu treniņi Daugavpilī bērniem un pieaugušajiem: no pirmā treniņa līdz Latvijas čempiona titulam. Daugavpils Top Team trenē MMA un K1, Daugavpils Grappling Team trenē grapplingu.",
+cta_join:"Pieteikties treniņam",cta_sched:"Skatīt grafiku",
+count:"Latvijas čempionu tituli 2023–2026: MMA un pankrations",
+groups_h:"Klubi un grupas",groups_intro:"Pirms pieteikšanās pajautājiet trenerim, kura grupa jums der.",
+g1_t:"Bērnu MMA, 5.–8. klase",g1_w:"Otrd., Ceturtd. · 16:30–17:45",g1_p:"Iesildīšanās, darbs ar bumbu un ēnu cīņa, tehnika (metieni un nogāšanas), viegla cīņa un stiepšanās.",
+g2_t:"MMA",g2_w:"Otrd., Ceturtd. · 18:00–20:00",g2_p:"Sitieni, cīņa stāvus un parterā, kombinācijas ar stingru noteikumu ievērošanu.",
+g4_t:"MMA iesācējiem",g4_w:"Pirmd., Treš., Piektd. · 17:00–18:30",g4_p:"Pamati: stāja, kustība, sitieni, cīņa stāvus un parterā. Der tiem, kas sāk no nulles.",
+g5_t:"MMA pieredzējušiem",g5_w:"Pirmd., Treš., Piektd. · 19:00–20:30",g5_p:"Kombinācijas ar stingru noteikumu ievērošanu, taktika un sparingi tiem, kam jau ir pamati.",
+g3_t:"Grapplings pieaugušajiem",g3_w:"Otrd., Ceturtd. · 18:00–20:00 · Sestd. · 15:00–17:00",g3_p:"No-gi. Iesildīšanās drilli, tehnika pēc mēneša tēmas, tad sparingi: 5×5 vai 6×5 minūtes.",
+sched_h:"Nedēļas grafiks",sched_intro:"Treniņi notiek katru dienu, izņemot svētdienu.",
+days:["Pirmd.","Otrd.","Treš.","Ceturtd.","Piektd.","Sestd.","Svētd."],s_kids:"Bērnu MMA",s_mma:"MMA",s_k1b:"MMA iesācēji",s_k1a:"MMA pieredzējušie",s_grap:"Grapplings",
+method_h:"Kā mēs trenējamies",method_intro:"Katram treniņam ir plāns, katram mēnesim ir tēma.",
+m1_t:"Mēneša tēma",m1_p:"Visu mēnesi strādājam ar vienu tēmu, piemēram, septembrī ar sviru uz roku (armbar).",
+m2_t:"No vienkāršā uz sarežģīto",m2_p:"Tehnika tiek būvēta pakāpeniski: no pamatkustības līdz kombinācijai un pielietojumam sparingā.",
+m3_t:"Līdz padošanās",m3_p:"Grapplingā pozīciju raundi turpinās līdz padošanās, nevis punktiem. Tā cīkstonis nemācās vienkārši noturēties augšā.",
+prices_h:"Cenas",prices_intro:"Katram klubam ir savs abonements. Top Team abonements der gan MMA, gan K1 treniņiem.",pr3_t:"Individuālais treniņš",month:"Mēneša abonements",single:"Vienreizējs treniņš",indiv:"1,5–2 stundas",pr3_p:"Laiku sarunājam ar treneri.",
+prices_note:"Abonements derīgs tikai savam klubam. Treniņš otrā klubā tiek apmaksāts kā vienreizējs.",
+coach_role:"Treneris un vadītājs abos klubos",coach_p:"Trenē MMA, K1, grapplingu (no-gi) un vispārējo fizisko sagatavotību. Vada bērnu un pieaugušo grupas Daugavpils Top Team un Daugavpils Grappling Team.",
+cred1:"MMA trenera C kategorija",cred2:"UWW grapplinga B kategorija",
+champs_h:"Mūsu čempioni",n_dan:"Danila Ančipanovs",n_vik:"Viktors ļeonovs",n_rol:"Rolans Kazačonoks",r_pank:"Latvijas čempions pankrationā",r_vik24:"Latvijas čempions MMA (decembrī)",r_mma:"Latvijas čempions MMA",r_bronze:"Latvijas čempionāta bronza",rol_note:"Rolans pārstāv divus klubus: Daugavpils Top Team un MMA Riga Sparta.",
+contacts_h:"Kontakti",contacts_intro:"Abi klubi trenējas vienā zālē. Sazinieties ar treneri, lai pieteiktos pirmajam treniņam.",
+c_addr:"Adrese",c_phone:"Tālrunis",c_social:"Saites",l_smooth:"Kluba sacensību rezultāti",l_ajp:"Kluba profils AJP turnīros",map:"Atvērt kartē",copy:"Kopēt numuru",copied:"Nokopēts"},
+ru:{nav_groups:"Клубы",nav_schedule:"Расписание",nav_prices:"Цены",nav_coach:"Тренер",nav_contacts:"Контакты",
+lead:"Тренировки по единоборствам в Даугавпилсе для детей и взрослых: от первой тренировки до титула чемпиона Латвии. В Daugavpils Top Team занимаются MMA и K1, в Daugavpils Grappling Team грэпплингом.",
+cta_join:"Записаться на тренировку",cta_sched:"Смотреть расписание",
+count:"Титула чемпионов Латвии 2023–2026: MMA и панкратион",
+groups_h:"Клубы и группы",groups_intro:"Перед записью спросите тренера, какая группа вам подходит.",
+g1_t:"Детское MMA, 5–8 класс",g1_w:"Вт, Чт · 16:30–17:45",g1_p:"Разминка, работа с мячом и бой с тенью, техника (броски и проходы в ноги), лёгкая борьба и растяжка.",
+g2_t:"MMA",g2_w:"Вт, Чт · 18:00–20:00",g2_p:"Ударная техника, борьба в стойке и в партере, комбинации со строгим соблюдением правил.",
+g4_t:"MMA для новичков",g4_w:"Пн, Ср, Пт · 17:00–18:30",g4_p:"Основы: стойка, передвижение, удары, борьба в стойке и в партере. Подходит тем, кто начинает с нуля.",
+g5_t:"MMA для опытных",g5_w:"Пн, Ср, Пт · 19:00–20:30",g5_p:"Комбинации со строгим соблюдением правил, тактика и спарринги для тех, у кого уже есть база.",
+g3_t:"Грэпплинг для взрослых",g3_w:"Вт, Чт · 18:00–20:00 · Сб · 15:00–17:00",g3_p:"No-gi. Разминка-дриллы, техника по теме месяца, затем спарринги: 5×5 или 6×5 минут.",
+sched_h:"Расписание на неделю",sched_intro:"Тренировки каждый день, кроме воскресенья.",
+days:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"],s_kids:"Детское MMA",s_mma:"MMA",s_k1b:"MMA новички",s_k1a:"MMA опытные",s_grap:"Грэпплинг",
+method_h:"Как мы тренируемся",method_intro:"У каждой тренировки есть план, у каждого месяца есть тема.",
+m1_t:"Тема месяца",m1_p:"Весь месяц работаем над одной темой, например в сентябре над рычагом локтя (armbar).",
+m2_t:"От простого к сложному",m2_p:"Техника строится постепенно: от базового движения к комбинации и применению в спарринге.",
+m3_t:"До сдачи",m3_p:"В грэпплинге позиционные раунды идут до сдачи, а не по очкам. Так боец не учится просто удерживаться сверху.",
+prices_h:"Цены",prices_intro:"У каждого клуба свой абонемент. Абонемент Top Team действует и на MMA, и на K1.",pr3_t:"Индивидуальная тренировка",month:"Абонемент на месяц",single:"Разовая тренировка",indiv:"1,5–2 часа",pr3_p:"Время договариваемся с тренером.",
+prices_note:"Абонемент действует только в своём клубе. Тренировка в другом клубе оплачивается как разовая.",
+coach_role:"Тренер и руководитель обоих клубов",coach_p:"Тренирует MMA, K1, грэпплинг (no-gi) и общую физическую подготовку. Ведёт детские и взрослые группы Daugavpils Top Team и Daugavpils Grappling Team.",
+cred1:"Тренер MMA, категория C",cred2:"Грэпплинг UWW, категория B",
+champs_h:"Наши чемпионы",n_dan:"Данила Анчипанов",n_vik:"Виктор Леонов",n_rol:"Ролан Казачёнок",r_pank:"чемпион Латвии по панкратиону",r_vik24:"чемпион Латвии по MMA (декабрь)",r_mma:"чемпион Латвии по MMA",r_bronze:"бронзовый призёр чемпионата Латвии",rol_note:"Ролан выступает за два клуба: Daugavpils Top Team и MMA Riga Sparta.",
+contacts_h:"Контакты",contacts_intro:"Оба клуба тренируются в одном зале. Свяжитесь с тренером, чтобы записаться на первую тренировку.",
+c_addr:"Адрес",c_phone:"Телефон",c_social:"Ссылки",l_smooth:"Результаты клуба на соревнованиях",l_ajp:"Профиль клуба на турнирах AJP",map:"Открыть на карте",copy:"Скопировать номер",copied:"Скопировано"},
+en:{nav_groups:"Clubs",nav_schedule:"Schedule",nav_prices:"Prices",nav_coach:"Coach",nav_contacts:"Contacts",
+lead:"Combat sports training in Daugavpils for kids and adults, from your first session to a Latvian championship title. Daugavpils Top Team trains MMA and K1, Daugavpils Grappling Team trains grappling.",
+cta_join:"Book a session",cta_sched:"See the schedule",
+count:"Latvian championship titles 2023–2026: MMA and pankration",
+groups_h:"Clubs and groups",groups_intro:"Ask the coach which group suits you before signing up.",
+g1_t:"Kids MMA, grades 5–8",g1_w:"Tue, Thu · 16:30–17:45",g1_p:"Warm-up, ball work and shadow boxing, technique (throws and takedowns), light wrestling and stretching.",
+g2_t:"MMA",g2_w:"Tue, Thu · 18:00–20:00",g2_p:"Striking, stand-up and ground fighting, combinations with strict rule discipline.",
+g4_t:"MMA beginners",g4_w:"Mon, Wed, Fri · 17:00–18:30",g4_p:"The basics: stance, footwork, striking, stand-up and ground fighting. For anyone starting from zero.",
+g5_t:"MMA advanced",g5_w:"Mon, Wed, Fri · 19:00–20:30",g5_p:"Combinations with strict rule discipline, tactics and sparring for those who already have the basics.",
+g3_t:"Adult grappling",g3_w:"Tue, Thu · 18:00–20:00 · Sat · 15:00–17:00",g3_p:"No-gi. Drill warm-up, technique on the month's theme, then sparring: 5×5 or 6×5 minutes.",
+sched_h:"Weekly schedule",sched_intro:"Training every day except Sunday.",
+days:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],s_kids:"Kids MMA",s_mma:"MMA",s_k1b:"MMA beginners",s_k1a:"MMA advanced",s_grap:"Grappling",
+method_h:"How we train",method_intro:"Every session has a plan, every month has a theme.",
+m1_t:"Theme of the month",m1_p:"The whole month focuses on one theme, for example the armbar in September.",
+m2_t:"Simple to complex",m2_p:"Technique is built in steps: from the basic movement to the combination and its use in sparring.",
+m3_t:"To the submission",m3_p:"In grappling, positional rounds go until someone taps, not for points, so athletes never learn to just stall on top.",
+prices_h:"Prices",prices_intro:"Each club has its own pass. The Top Team pass covers both MMA and K1.",pr3_t:"Private session",month:"Monthly pass",single:"Single session",indiv:"1.5–2 hours",pr3_p:"Time arranged with the coach.",
+prices_note:"A pass is valid in its own club only. A session at the other club is paid as a single session.",
+coach_role:"Coach and manager of both clubs",coach_p:"Coaches MMA, K1, grappling (no-gi) and general fitness. Runs the kids and adult groups of Daugavpils Top Team and Daugavpils Grappling Team.",
+cred1:"MMA coach, category C",cred2:"UWW grappling, category B",
+champs_h:"Our champions",n_dan:"Danila Anchipanov",n_vik:"Viktor Leonov",n_rol:"Rolan Kazachenok",r_pank:"Latvian pankration champion",r_vik24:"Latvian MMA champion (December)",r_mma:"Latvian MMA champion",r_bronze:"Latvian championship bronze",rol_note:"Rolan represents two clubs: Daugavpils Top Team and MMA Riga Sparta.",
+contacts_h:"Contacts",contacts_intro:"Both clubs train in the same gym. Contact the coach to book your first session.",
+c_addr:"Address",c_phone:"Phone",c_social:"Links",l_smooth:"Club competition results",l_ajp:"Club profile at AJP events",map:"Open in Maps",copy:"Copy number",copied:"Copied"}
+};
+// Day index 0 = Monday. Class "tt" = Daugavpils Top Team, "gt" = Daugavpils Grappling Team.
+const K1=[["s_k1b","17:00–18:30","tt"],["s_k1a","19:00–20:30","tt"]];
+const MMA=[["s_kids","16:30–17:45","tt"],["s_grap","18:00–20:00","gt"]];
+const PLAN={0:K1,1:MMA,2:K1,3:MMA,4:K1,5:[["s_grap","15:00–17:00","gt"]]};
+let lang="lv";
+function render(){
+  const d=T[lang];document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i]").forEach(el=>{const v=d[el.dataset.i];if(typeof v==="string")el.textContent=v;});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+  const week=document.getElementById("week");week.innerHTML="";
+  d.days.forEach((name,i)=>{
+    const day=document.createElement("div");day.className="day"+(PLAN[i]?"":" off");
+    const b=document.createElement("b");b.textContent=name;day.appendChild(b);
+    (PLAN[i]||[]).forEach(([k,t,c])=>{const s=document.createElement("div");s.className="slot "+c;s.textContent=d[k];const sp=document.createElement("span");sp.textContent=t;s.appendChild(sp);day.appendChild(s);});
+    week.appendChild(day);
+  });
+}
+try{const s=localStorage.getItem("dtt-lang");if(T[s])lang=s;}catch(e){}
+if(T[location.hash.slice(1)])lang=location.hash.slice(1);
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;render();try{localStorage.setItem("dtt-lang",lang);}catch(e){}}));
+render();
+document.getElementById("copyPhone").addEventListener("click",e=>{
+  const btn=e.currentTarget,num="+37127167013";
+  const done=()=>{btn.textContent=T[lang].copied;setTimeout(()=>{btn.textContent=T[lang].copy;},1800);};
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById("phone"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(num).then(done,fallback);}catch(err){fallback();}
+});
+</script>
+
+</body>
+</html>
