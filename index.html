@@ -161,6 +161,26 @@ h2{font:700 clamp(1.4rem,3vw,1.9rem)/1.15 var(--display);margin:0 0 8px;text-wra
 .fights figcaption b{display:block;color:var(--ink)}
 @media (max-width:860px){.fights{grid-template-columns:repeat(2,minmax(0,1fr))}.fights figure:last-child{grid-column:1/-1}.fights figure:last-child img{aspect-ratio:16/10}}
 .contact .more+.more{margin-left:14px}
+.news-list{display:flex;flex-direction:column;gap:16px}
+.news{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.news img{display:block;width:100%;height:100%;min-height:180px;object-fit:cover}
+.news div{padding:18px 20px;min-width:0}
+.news time{font:500 .78rem/1 var(--mono);color:var(--carmine);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.news h3{font:700 1.05rem/1.3 var(--display);margin:8px 0;text-wrap:balance}
+.news p{margin:0;color:var(--muted)}
+@media (max-width:640px){.news{grid-template-columns:1fr}.news img{aspect-ratio:4/3;height:auto}}
+h3.sub{font:700 1.1rem/1.3 var(--display);margin:40px 0 14px}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(160px,190px);gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.strip figure,.photos figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;scroll-snap-align:start;min-width:0}
+.strip img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.photos img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.strip figcaption,.photos figcaption{padding:8px 10px;font-size:.8rem;color:var(--muted)}
+.strip figcaption b{display:block;color:var(--ink);font-size:.85rem}
+.strip img,.photos img,.team img,.hero-photo img,.fights img{height:auto}
+.team{margin:28px 0 0}
+.team img{display:block;width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 62%;border-radius:8px}
+.team figcaption{margin-top:8px;color:var(--muted);font-size:.88rem}
 .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
 .step b{font:900 1.8rem/1 var(--display);color:var(--carmine)}
@@ -248,6 +268,7 @@ section,.hero{scroll-margin-top:64px}
       </div>
     </div>
   </div>
+  <figure class="team"><img src="img/team.jpg" alt="Daugavpils Top Team un Daugavpils Grappling Team" loading="lazy" width="790" height="790"><figcaption data-i="team_cap"></figcaption></figure>
 </div></section>
 
 <section id="schedule"><div class="wrap">
@@ -314,12 +335,30 @@ section,.hero{scroll-margin-top:64px}
 <section id="fights"><div class="wrap">
   <h2 data-i="fights_h"></h2>
   <p class="intro" data-i="fights_intro"></p>
-  <div class="fights">
-    <figure><img src="img/gf-leonovs.jpg" alt="Ghetto Fight: Viktors Leonovs" loading="lazy" width="399" height="501"><figcaption><b>Viktors Leonovs</b>Ghetto Fight · MMA</figcaption></figure>
-    <figure><img src="img/gf-fedorcuks.jpg" alt="Ghetto Fight: Maksims Fedorčuks" loading="lazy" width="399" height="501"><figcaption><b>Maksims Fedorčuks</b>Ghetto Fight · Jēkabpils</figcaption></figure>
-    <figure><img src="img/gf-tumashevich.jpg" alt="Ghetto Fight: Nikita Tumashevich" loading="lazy" width="399" height="501"><figcaption><b>Nikita Tumashevich</b>Ghetto Fight · Striking</figcaption></figure>
-    <figure><img src="img/berserk-fjodorovs.jpg" alt="Berserk Summer Cup 2025: Oļegs Fjodorovs" loading="lazy" width="399" height="501"><figcaption><b>Oļegs Fjodorovs</b>Berserk Summer Cup'25 · MMA</figcaption></figure>
-    <figure><img src="img/podium.jpg" alt="Open Lithuanian" loading="lazy" width="447" height="447"><figcaption><b>Open Lithuanian</b><span data-i="cap_podium"></span></figcaption></figure>
+  <div class="news-list">
+    <article class="news"><img src="img/n-tumashevich-tko.jpg" alt="Ghetto Fight: Nikita Tumashevich" loading="lazy" width="478" height="650"><div><time>03.2026</time><h3 data-i="n1_t"></h3><p data-i="n1_p"></p></div></article>
+    <article class="news"><img src="img/n-akula.jpg" alt="Artūrs Akula" loading="lazy" width="780" height="800"><div><time>05.2025</time><h3 data-i="n2_t"></h3><p data-i="n2_p"></p></div></article>
+    <article class="news"><img src="img/n-bauska2024.jpg" alt="Latvijas MMA čempionāts, Bauska" loading="lazy" width="790" height="790"><div><time>22.12.2024</time><h3 data-i="n3_t"></h3><p data-i="n3_p"></p></div></article>
+    <article class="news"><img src="img/n-ajp-kaunas.jpg" alt="AJP Tour Lithuania, Kaunas" loading="lazy" width="795" height="760"><div><time>23.03.2024</time><h3 data-i="n4_t"></h3><p data-i="n4_p"></p></div></article>
+    <article class="news"><img src="img/n-newaza.jpg" alt="NEWAZA PRO 5, Valmiera" loading="lazy" width="790" height="625"><div><time>03.02.2024</time><h3 data-i="n5_t"></h3><p data-i="n5_p"></p></div></article>
+    <article class="news"><img src="img/n-ghetto2024.jpg" alt="Ghetto Fight, First Mir" loading="lazy" width="790" height="800"><div><time>2024</time><h3 data-i="n6_t"></h3><p data-i="n6_p"></p></div></article>
+  </div>
+  <h3 class="sub" data-i="posters_h"></h3>
+  <div class="strip">
+    <figure><img src="img/gf-leonovs.jpg" alt="Viktors Leonovs, Ghetto Fight · MMA" loading="lazy" width="399" height="501"><figcaption><b>Viktors Leonovs</b>Ghetto Fight · MMA</figcaption></figure>
+    <figure><img src="img/gf-tumashevich.jpg" alt="Nikita Tumashevich, Ghetto Fight · Striking 70 kg" loading="lazy" width="399" height="501"><figcaption><b>Nikita Tumashevich</b>Ghetto Fight · Striking 70 kg</figcaption></figure>
+    <figure><img src="img/p-batalovs.jpg" alt="Maksims Batalovs, Ghetto Fight · MMA 93+ kg" loading="lazy" width="351" height="461"><figcaption><b>Maksims Batalovs</b>Ghetto Fight · MMA 93+ kg</figcaption></figure>
+    <figure><img src="img/p-rudovics.jpg" alt="Pavels Rudovičs, Ghetto Fight · Striking 70 kg" loading="lazy" width="351" height="461"><figcaption><b>Pavels Rudovičs</b>Ghetto Fight · Striking 70 kg</figcaption></figure>
+    <figure><img src="img/gf-fedorcuks.jpg" alt="Maksims Fedorčuks, Ghetto Fight · Jēkabpils" loading="lazy" width="399" height="501"><figcaption><b>Maksims Fedorčuks</b>Ghetto Fight · Jēkabpils</figcaption></figure>
+    <figure><img src="img/p-griskians.jpg" alt="Antons Griškians, Ghetto Fight · Jēkabpils" loading="lazy" width="350" height="465"><figcaption><b>Antons Griškians</b>Ghetto Fight · Jēkabpils</figcaption></figure>
+    <figure><img src="img/p-sinevics.jpg" alt="Jurijs Sinevičs, Ghetto Fight · Jēkabpils" loading="lazy" width="351" height="465"><figcaption><b>Jurijs Sinevičs</b>Ghetto Fight · Jēkabpils</figcaption></figure>
+    <figure><img src="img/berserk-fjodorovs.jpg" alt="Oļegs Fjodorovs, Berserk Summer Cup'25 · MMA" loading="lazy" width="399" height="501"><figcaption><b>Oļegs Fjodorovs</b>Berserk Summer Cup'25 · MMA</figcaption></figure>
+  </div>
+  <h3 class="sub" data-i="photos_h"></h3>
+  <div class="photos">
+    <figure><img src="img/podium.jpg" alt="Open Lithuanian" loading="lazy" width="447" height="447"><figcaption>Open Lithuanian</figcaption></figure>
+    <figure><img src="img/g-ajp-latvia.jpg" alt="AJP Tour Latvia" loading="lazy" width="740" height="790"><figcaption>AJP Tour Latvia</figcaption></figure>
+    <figure><img src="img/g-ghetto-win.jpg" alt="Ghetto Fight" loading="lazy" width="740" height="790"><figcaption>Ghetto Fight</figcaption></figure>
   </div>
 </div></section>
 
@@ -395,7 +434,8 @@ q5:"Kā pieteikties?",a5:"Piezvaniet vai rakstiet WhatsApp uz +371 27 167 013, v
 f1:"Bērni: 5.–8. klase",f2:"Pieaugušie: 18–45 gadi",f3:"Pirmais treniņš bez maksas",f4:"Treniņi 6 dienas nedēļā",
 free:"Pirmais treniņš ir bez maksas: atnāc, pamēģini un tikai tad izvēlies abonementu.",
 fights_h:"Cīņas un turnīri",fights_intro:"Mūsu sportisti startē turnīros Latvijā un Lietuvā.",cap_podium:"Brazīlijas džiu-džitsu turnīrs",
-cred3:"Daugavpils Universitāte: sporta skolotājs (2026)",since:"kopš"},
+cred3:"Daugavpils Universitāte: sporta skolotājs (2026)",since:"kopš",
+fights_h:"Jaunumi un rezultāti",fights_intro:"Cīņas, turnīri un mūsu cilvēki: no Latvijas līdz Lietuvai.",posters_h:"Afišas",photos_h:"Mirkļi",team_cap:"Mūsu komanda",n1_t:"Ghetto Fight: Nikita Tumashevich uzvar ar TKO",n1_p:"Ghetto Fight turnīrā First Club Nikita Tumashevich uzvarēja ar tehnisko nokautu. Turnīra kartē par klubu cīnījās arī Maksims Batalovs (MMA, 93+ kg) un Pavels Rudovičs (striking, līdz 70 kg).",n2_t:"Mūsu cilvēki: Artūrs «Akula»",n2_p:"Artūrs atnāca uz zāli bez cīņas bāzes: no volejbola un mazliet boksa. Viņa firmas paņēmiens ir brabo/D'Arce žņaugšana. Ceļš: Ghetto Fight 2023, grapplinga čempionāti Lietuvā, zelts AJP Latvia.",n3_t:"Latvijas MMA čempionāts, Bauska",n3_p:"22. decembrī Bauskā par klubu startēja četri cīkstoņi. Viktors Leonovs kļuva par Latvijas čempionu MMA.",n4_t:"AJP Tour Lithuania, Kauņa",n4_p:"Brazīlijas džiu-džitsu turnīrā Artūrs Dubovskis izcīnīja 1. vietu. Sergejam Tjažkinam tās bija pirmās BJJ sacensības: divas cīņas un vērtīga pieredze.",n5_t:"NEWAZA PRO 5, Valmiera",n5_p:"Artūrs «Akula» piekrita cīņai tikai dažas dienas iepriekš un uzvarēja 3. raundā ar brabo/D'Arce žņaugšanu.",n6_t:"Ghetto Fight, First Mir",n6_p:"Maksims pirmajā cīņā dominēja parterā un uzvarēja ar žņaugšanu (rear-naked choke), otrajā cīņā zaudēja. Sergejam tā bija debija oktagonā, un cīņa beidzās neizšķirti."},
 ru:{nav_groups:"Клубы",nav_schedule:"Расписание",nav_prices:"Цены",nav_coach:"Тренер",nav_contacts:"Контакты",
 lead:"Тренировки по единоборствам в Даугавпилсе для детей и взрослых: от первой тренировки до титула чемпиона Латвии. В Daugavpils Top Team занимаются MMA и K1, в Daugavpils Grappling Team грэпплингом.",
 cta_join:"Записаться на тренировку",cta_sched:"Смотреть расписание",
@@ -432,7 +472,8 @@ q5:"Как записаться?",a5:"Позвоните или напишите
 f1:"Дети: 5–8 класс",f2:"Взрослые: 18–45 лет",f3:"Первая тренировка бесплатно",f4:"Тренировки 6 дней в неделю",
 free:"Первая тренировка бесплатная: приходите, попробуйте и только потом выбирайте абонемент.",
 fights_h:"Бои и турниры",fights_intro:"Наши спортсмены выступают на турнирах в Латвии и Литве.",cap_podium:"турнир по бразильскому джиу-джитсу",
-cred3:"Даугавпилсский университет: учитель спорта (2026)",since:"с"},
+cred3:"Даугавпилсский университет: учитель спорта (2026)",since:"с",
+fights_h:"Новости и результаты",fights_intro:"Бои, турниры и наши люди: от Латвии до Литвы.",posters_h:"Афиши",photos_h:"Моменты",team_cap:"Наша команда",n1_t:"Ghetto Fight: Никита Тумашевич побеждает техническим нокаутом",n1_p:"На турнире Ghetto Fight в First Club Никита Тумашевич выиграл бой техническим нокаутом. В карде турнира от клуба также выступали Максим Баталов (MMA, 93+ кг) и Павел Рудович (striking, до 70 кг).",n2_t:"Наши люди: Артур «Акула»",n2_p:"Артур пришёл в зал без борцовской базы — из волейбола и немного бокса. Его коронный приём — удушающий brabo/D'Arce. Путь: Ghetto Fight 2023, чемпионаты по грэпплингу в Литве, золото AJP Latvia.",n3_t:"Чемпионат Латвии по MMA, Бауска",n3_p:"22 декабря в Бауске за клуб выступали четыре бойца. Виктор Леонов стал чемпионом Латвии по MMA.",n4_t:"AJP Tour Lithuania, Каунас",n4_p:"На турнире по бразильскому джиу-джитсу Артур Дубовский занял первое место. Для Сергея Тяжкина это были первые соревнования по BJJ: две схватки и ценный опыт.",n5_t:"NEWAZA PRO 5, Валмиера",n5_p:"Артур «Акула» согласился на бой всего за несколько дней и победил в 3-м раунде удушающим brabo/D'Arce.",n6_t:"Ghetto Fight, First Mir",n6_p:"Максим в первом бою доминировал в партере и победил удушающим (rear-naked choke), второй бой проиграл. Для Сергея это был дебют в октагоне, бой закончился вничью."},
 en:{nav_groups:"Clubs",nav_schedule:"Schedule",nav_prices:"Prices",nav_coach:"Coach",nav_contacts:"Contacts",
 lead:"Combat sports training in Daugavpils for kids and adults, from your first session to a Latvian championship title. Daugavpils Top Team trains MMA and K1, Daugavpils Grappling Team trains grappling.",
 cta_join:"Book a session",cta_sched:"See the schedule",
@@ -469,7 +510,8 @@ q5:"How do I sign up?",a5:"Call or message us on WhatsApp at +371 27 167 013, or
 f1:"Kids: grades 5–8",f2:"Adults: ages 18–45",f3:"First session free",f4:"Training 6 days a week",
 free:"Your first session is free: come, try it, and only then choose a pass.",
 fights_h:"Fights and tournaments",fights_intro:"Our athletes compete at tournaments in Latvia and Lithuania.",cap_podium:"Brazilian Jiu-Jitsu tournament",
-cred3:"Daugavpils University: sports teacher (2026)",since:"since"}
+cred3:"Daugavpils University: sports teacher (2026)",since:"since",
+fights_h:"News and results",fights_intro:"Fights, tournaments and our people, from Latvia to Lithuania.",posters_h:"Fight posters",photos_h:"Moments",team_cap:"Our team",n1_t:"Ghetto Fight: Nikita Tumashevich wins by TKO",n1_p:"At Ghetto Fight at First Club, Nikita Tumashevich won by technical knockout. The club also had Maksims Batalovs (MMA, 93+ kg) and Pavels Rudovičs (striking, up to 70 kg) on the card.",n2_t:"Our people: Artur “Akula”",n2_p:"Artur came to the gym with no wrestling background, from volleyball and a little boxing. His signature move is the brabo/D'Arce choke. His path: Ghetto Fight 2023, grappling championships in Lithuania, gold at AJP Latvia.",n3_t:"Latvian MMA Championship, Bauska",n3_p:"On 22 December four club fighters competed in Bauska. Viktor Leonov became Latvian MMA champion.",n4_t:"AJP Tour Lithuania, Kaunas",n4_p:"At the Brazilian Jiu-Jitsu tournament, Artur Dubovsky took first place. For Sergey Tyazhkin it was his first BJJ competition: two matches and valuable experience.",n5_t:"NEWAZA PRO 5, Valmiera",n5_p:"Artur “Akula” took the fight on a few days' notice and won in round 3 with a brabo/D'Arce choke.",n6_t:"Ghetto Fight, First Mir",n6_p:"In his first fight Maksim dominated on the ground and won by rear-naked choke; he lost his second fight. It was Sergey's octagon debut, and his fight ended in a draw."}
 };
 // Day index 0 = Monday. Class "tt" = Daugavpils Top Team, "gt" = Daugavpils Grappling Team.
 const K1=[["s_k1b","17:00–18:30","tt"],["s_k1a","19:00–20:30","tt"]];
