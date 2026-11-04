@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="MMA, K1 un grapplinga treniņi Daugavpilī bērniem un pieaugušajiem. Daugavpils Top Team un Daugavpils Grappling Team, Dzirnavu iela 20.">
+<meta name="description" content="MMA, K1 un grapplinga treniņi Daugavpilī bērniem un pieaugušajiem. Pirmais treniņš bez maksas. Daugavpils Top Team un Daugavpils Grappling Team, Dzirnavu iela 20.">
 <link rel="canonical" href="https://daugavpilstopteam.lv/">
+<link rel="icon" href="img/logo.jpg">
 <title>Daugavpils Top Team</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,6 +142,25 @@ h2{font:700 clamp(1.4rem,3vw,1.9rem)/1.15 var(--display);margin:0 0 8px;text-wra
 .links span{display:block;color:var(--muted);font-size:.85rem;overflow-wrap:anywhere}
 .contact .more{display:inline-block;margin-top:10px;color:var(--carmine);font-weight:500;font-size:.9rem;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
 @media (max-width:760px){.contacts{grid-template-columns:1fr}}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:36px;height:36px;border-radius:6px;object-fit:cover}
+.facts{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{font:500 .8rem/1 var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 12px}
+.facts li.hl{background:var(--carmine);color:var(--carmine-ink);border-color:var(--carmine)}
+.hero-photo{position:relative;justify-self:end;margin:0;width:100%;max-width:340px}
+.hero-photo img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:8px}
+.badge{position:absolute;left:-28px;bottom:28px;background:var(--carmine);color:var(--carmine-ink);border-radius:8px;padding:14px 16px;max-width:220px}
+.badge .big{font:900 3rem/1 var(--display);letter-spacing:-.03em}
+.badge p{margin:6px 0 0;font-size:.85rem;font-weight:600;line-height:1.35}
+@media (max-width:760px){.hero-photo{justify-self:start;max-width:420px}.badge{left:12px;bottom:12px}}
+.free{background:var(--carmine);color:var(--carmine-ink);border-radius:8px;padding:16px 20px;font-weight:600;margin:0 0 18px;max-width:640px}
+.fights{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.fights figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;min-width:0}
+.fights img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.fights figcaption{padding:10px 12px;font-size:.85rem;color:var(--muted)}
+.fights figcaption b{display:block;color:var(--ink)}
+@media (max-width:860px){.fights{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.contact .more+.more{margin-left:14px}
 .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
 .step b{font:900 1.8rem/1 var(--display);color:var(--carmine)}
@@ -163,7 +183,7 @@ section,.hero{scroll-margin-top:64px}
 <body>
 
 <header><div class="wrap bar">
-  <a class="logo" href="#top">Daugavpils <span>Top Team</span></a>
+  <a class="logo" href="#top"><img src="img/logo.jpg" alt="" width="36" height="36">Daugavpils <span>Top Team</span></a>
   <nav>
     <a href="#clubs" data-i="nav_groups"></a>
     <a href="#schedule" data-i="nav_schedule"></a>
@@ -189,11 +209,17 @@ section,.hero{scroll-margin-top:64px}
       <a class="btn primary" href="#contacts" data-i="cta_join"></a>
       <a class="btn" href="#schedule" data-i="cta_sched"></a>
     </div>
+    <ul class="facts">
+      <li class="hl" data-i="f3"></li>
+      <li data-i="f1"></li>
+      <li data-i="f2"></li>
+      <li data-i="f4"></li>
+    </ul>
   </div>
-  <div class="count">
-    <div class="big">3×</div>
-    <p data-i="count"></p>
-  </div>
+  <figure class="hero-photo">
+    <img src="img/hero.jpg" alt="Daugavpils Top Team" width="335" height="597">
+    <div class="badge"><div class="big">3×</div><p data-i="count"></p></div>
+  </figure>
 </div></div>
 
 <main>
@@ -203,7 +229,7 @@ section,.hero{scroll-margin-top:64px}
   <div class="clubs">
     <div class="club tt">
       <div class="club-head">
-        <div><h3>Daugavpils Top Team</h3><span class="tag">MMA · K1</span></div>
+        <div><h3>Daugavpils Top Team</h3><span class="tag">MMA · K1 · <span data-i="since"></span> 2023</span></div>
         <a href="https://www.instagram.com/daugavpils_top_team_mma/" target="_blank" rel="noopener">@daugavpils_top_team_mma</a>
       </div>
       <div class="groups">
@@ -214,7 +240,7 @@ section,.hero{scroll-margin-top:64px}
     </div>
     <div class="club gt">
       <div class="club-head">
-        <div><h3>Daugavpils Grappling Team</h3><span class="tag">Grappling · no-gi</span></div>
+        <div><h3>Daugavpils Grappling Team</h3><span class="tag">Grappling · no-gi · <span data-i="since"></span> 2011</span></div>
         <a href="https://www.instagram.com/daugavpils_grappling_team/" target="_blank" rel="noopener">@daugavpils_grappling_team</a>
       </div>
       <div class="groups">
@@ -254,6 +280,7 @@ section,.hero{scroll-margin-top:64px}
 <section id="prices"><div class="wrap">
   <h2 data-i="prices_h"></h2>
   <p class="intro" data-i="prices_intro"></p>
+  <p class="free" data-i="free"></p>
   <div class="prices">
     <div class="price"><h3>Daugavpils Top Team</h3><span class="sub">MMA · K1</span><div class="row"><span data-i="month"></span><b>45 €</b></div><div class="row"><span data-i="single"></span><b>6 €</b></div></div>
     <div class="price"><h3>Daugavpils Grappling Team</h3><span class="sub">Grappling · no-gi</span><div class="row"><span data-i="month"></span><b>40 €</b></div><div class="row"><span data-i="single"></span><b>5 €</b></div></div>
@@ -270,6 +297,7 @@ section,.hero{scroll-margin-top:64px}
     <ul class="creds">
       <li data-i="cred1"></li>
       <li data-i="cred2"></li>
+      <li data-i="cred3"></li>
     </ul>
   </div>
   <div class="champs">
@@ -280,6 +308,17 @@ section,.hero{scroll-margin-top:64px}
       <li><span class="yr">2025</span><div><b data-i="n_vik"></b><em data-i="r_bronze"></em></div></li>
       <li><span class="yr">2026</span><div><b data-i="n_vik"></b><em data-i="r_mma"></em></div></li>
     </ol>
+  </div>
+</div></section>
+
+<section id="fights"><div class="wrap">
+  <h2 data-i="fights_h"></h2>
+  <p class="intro" data-i="fights_intro"></p>
+  <div class="fights">
+    <figure><img src="img/gf-leonovs.jpg" alt="Ghetto Fight: Viktors Leonovs" loading="lazy" width="399" height="501"><figcaption><b>Viktors Leonovs</b>Ghetto Fight · MMA</figcaption></figure>
+    <figure><img src="img/gf-fedorcuks.jpg" alt="Ghetto Fight: Maksims Fedorčuks" loading="lazy" width="399" height="501"><figcaption><b>Maksims Fedorčuks</b>Ghetto Fight · Jēkabpils</figcaption></figure>
+    <figure><img src="img/gf-tumashevich.jpg" alt="Ghetto Fight: Nikita Tumashevich" loading="lazy" width="399" height="501"><figcaption><b>Nikita Tumashevich</b>Ghetto Fight · Striking</figcaption></figure>
+    <figure><img src="img/podium.jpg" alt="Open Lithuanian" loading="lazy" width="447" height="447"><figcaption><b>Open Lithuanian</b><span data-i="cap_podium"></span></figcaption></figure>
   </div>
 </div></section>
 
@@ -299,11 +338,13 @@ section,.hero{scroll-margin-top:64px}
   <p class="intro" data-i="contacts_intro"></p>
   <div class="contacts">
     <div class="contact"><b data-i="c_addr"></b><div class="val">Dzirnavu iela 20, Daugavpils, LV-5401</div><a class="more" href="https://www.google.com/maps/search/?api=1&query=Daugavpils+Top+Team+MMA+Dzirnavu+iela+20+Daugavpils" target="_blank" rel="noopener" data-i="map"></a></div>
-    <div class="contact"><b data-i="c_phone"></b><div class="val" id="phone">+371 27 167 013</div><button type="button" class="more copy" id="copyPhone" data-i="copy"></button></div>
+    <div class="contact"><b data-i="c_phone"></b><div class="val" id="phone">+371 27 167 013</div><button type="button" class="more copy" id="copyPhone" data-i="copy"></button><a class="more" href="https://wa.me/37127167013" target="_blank" rel="noopener">WhatsApp</a></div>
     <div class="contact"><b data-i="c_social"></b>
       <ul class="links">
         <li><a href="https://www.instagram.com/daugavpils_top_team_mma/" target="_blank" rel="noopener">Instagram · Top Team</a><span>@daugavpils_top_team_mma</span></li>
         <li><a href="https://www.instagram.com/daugavpils_grappling_team/" target="_blank" rel="noopener">Instagram · Grappling Team</a><span>@daugavpils_grappling_team</span></li>
+        <li><a href="https://www.tiktok.com/@daugavpilstopteam" target="_blank" rel="noopener">TikTok</a><span>@daugavpilstopteam</span></li>
+        <li><a href="https://www.youtube.com/@daugavpilstopteam" target="_blank" rel="noopener">YouTube</a><span>@daugavpilstopteam</span></li>
         <li><a href="https://smoothcomp.com/en/club/48372" target="_blank" rel="noopener">Smoothcomp</a><span data-i="l_smooth"></span></li>
         <li><a href="https://ajptour.com/ru/club/11008" target="_blank" rel="noopener">AJP Tour</a><span data-i="l_ajp"></span></li>
       </ul>
@@ -337,19 +378,23 @@ prices_h:"Cenas",prices_intro:"Katram klubam ir savs abonements. Top Team abonem
 prices_note:"Abonements derīgs tikai savam klubam. Treniņš otrā klubā tiek apmaksāts kā vienreizējs.",
 coach_role:"Treneris un vadītājs abos klubos",coach_p:"Trenē MMA, K1, grapplingu (no-gi) un vispārējo fizisko sagatavotību. Vada bērnu un pieaugušo grupas Daugavpils Top Team un Daugavpils Grappling Team.",
 cred1:"MMA trenera C kategorija",cred2:"UWW grapplinga B kategorija",
-champs_h:"Mūsu čempioni",n_dan:"Danila Ančipanovs",n_vik:"Viktors ļeonovs",n_rol:"Rolans Kazačonoks",r_pank:"Latvijas čempions pankrationā",r_vik24:"Latvijas čempions MMA (decembrī)",r_mma:"Latvijas čempions MMA",r_bronze:"Latvijas čempionāta bronza",rol_note:"Rolans pārstāv divus klubus: Daugavpils Top Team un MMA Riga Sparta.",
+champs_h:"Mūsu čempioni",n_dan:"Danila Ančipanovs",n_vik:"Viktors Leonovs",n_rol:"Rolans Kazačonoks",r_pank:"Latvijas čempions pankrationā",r_vik24:"Latvijas čempions MMA (decembrī)",r_mma:"Latvijas čempions MMA",r_bronze:"Latvijas čempionāta bronza",rol_note:"Rolans pārstāv divus klubus: Daugavpils Top Team un MMA Riga Sparta.",
 contacts_h:"Kontakti",contacts_intro:"Abi klubi trenējas vienā zālē. Sazinieties ar treneri, lai pieteiktos pirmajam treniņam.",
 c_addr:"Adrese",c_phone:"Tālrunis",c_social:"Saites",l_smooth:"Kluba sacensību rezultāti",l_ajp:"Kluba profils AJP turnīros",map:"Atvērt kartē",copy:"Kopēt numuru",copied:"Nokopēts",
-nav_faq:"BUJ",fab:"Pieteikties",start_h:"Kā sākt",start_intro:"Pirmais treniņš ir vienkāršs, nekas īpašs nav vajadzīgs.",
-st1_t:"Sazinies",st1_p:"Piezvani vai uzraksti Instagram, un treneris ieteiks piemērotāko grupu.",
+nav_faq:"BUJ",fab:"Pieteikties",start_h:"Kā sākt",start_intro:"Pirmais treniņš ir bez maksas, un nekas īpašs tam nav vajadzīgs.",
+st1_t:"Sazinies",st1_p:"Piezvani, uzraksti WhatsApp vai Instagram, un treneris ieteiks piemērotāko grupu.",
 st2_t:"Atnāc uz treniņu",st2_p:"Ierodies grupas laikā sporta apģērbā. Iesācējiem MMA ir sava grupa: pirmdienās, trešdienās un piektdienās 17:00.",
-st3_t:"Izvēlies abonementu",st3_p:"Sākumā vari maksāt par katru treniņu, bet, kad iepatiksies, pāriet uz mēneša abonementu.",
+st3_t:"Izvēlies abonementu",st3_p:"Pirmais treniņš ir bez maksas. Pēc tam vari maksāt par katru treniņu vai pāriet uz mēneša abonementu.",
 faq_h:"Biežāk uzdotie jautājumi",
 q1:"Vai man jābūt labā fiziskajā formā?",a1:"Nē. Forma uzlabojas treniņu laikā, un katrs sāk savā tempā. Iesācējiem ir atsevišķa MMA grupa.",
-q2:"No kāda vecuma var trenēties?",a2:"Bērnu MMA grupa ir 5.–8. klases skolēniem. Pieaugušie var sākt jebkurā vecumā; ja šaubāties, pajautājiet trenerim.",
+q2:"No kāda vecuma var trenēties?",a2:"Bērnu MMA grupa ir 5.–8. klases skolēniem. Pieaugušo grupās trenējas no 18 līdz 45 gadiem.",
 q3:"Kas jāņem līdzi?",a3:"Ērts sporta apģērbs, ūdens un dvielis. Grapplingam kimono nav vajadzīgs: mēs trenējamies no-gi. Par aizsargekīpējumu MMA pajautājiet trenerim.",
 q4:"Vai obligāti jāpiedalās sacensībās?",a4:"Nē. Daudzi trenējas formai un pašaizsardzībai. Tie, kas vēlas sacensties, gatavojas startiem, un kluba cīkstoņi ir kļuvuši par Latvijas čempioniem.",
-q5:"Kā pieteikties?",a5:"Piezvaniet pa +371 27 167 013 vai rakstiet Instagram. Kontakti ir lapas apakšā."},
+q5:"Kā pieteikties?",a5:"Piezvaniet vai rakstiet WhatsApp uz +371 27 167 013, vai rakstiet Instagram. Kontakti ir lapas apakšā.",
+f1:"Bērni: 5.–8. klase",f2:"Pieaugušie: 18–45 gadi",f3:"Pirmais treniņš bez maksas",f4:"Treniņi 6 dienas nedēļā",
+free:"Pirmais treniņš ir bez maksas: atnāc, pamēģini un tikai tad izvēlies abonementu.",
+fights_h:"Cīņas un turnīri",fights_intro:"Mūsu sportisti startē turnīros Latvijā un Lietuvā.",cap_podium:"Brazīlijas džiu-džitsu turnīrs",
+cred3:"Daugavpils Universitāte: sporta skolotājs (2026)",since:"kopš"},
 ru:{nav_groups:"Клубы",nav_schedule:"Расписание",nav_prices:"Цены",nav_coach:"Тренер",nav_contacts:"Контакты",
 lead:"Тренировки по единоборствам в Даугавпилсе для детей и взрослых: от первой тренировки до титула чемпиона Латвии. В Daugavpils Top Team занимаются MMA и K1, в Daugavpils Grappling Team грэпплингом.",
 cta_join:"Записаться на тренировку",cta_sched:"Смотреть расписание",
@@ -373,16 +418,20 @@ cred1:"Тренер MMA, категория C",cred2:"Грэпплинг UWW, к
 champs_h:"Наши чемпионы",n_dan:"Данила Анчипанов",n_vik:"Виктор Леонов",n_rol:"Ролан Казачёнок",r_pank:"чемпион Латвии по панкратиону",r_vik24:"чемпион Латвии по MMA (декабрь)",r_mma:"чемпион Латвии по MMA",r_bronze:"бронзовый призёр чемпионата Латвии",rol_note:"Ролан выступает за два клуба: Daugavpils Top Team и MMA Riga Sparta.",
 contacts_h:"Контакты",contacts_intro:"Оба клуба тренируются в одном зале. Свяжитесь с тренером, чтобы записаться на первую тренировку.",
 c_addr:"Адрес",c_phone:"Телефон",c_social:"Ссылки",l_smooth:"Результаты клуба на соревнованиях",l_ajp:"Профиль клуба на турнирах AJP",map:"Открыть на карте",copy:"Скопировать номер",copied:"Скопировано",
-nav_faq:"Вопросы",fab:"Записаться",start_h:"Как начать",start_intro:"Первая тренировка — это просто, ничего особенного не нужно.",
-st1_t:"Свяжитесь",st1_p:"Позвоните или напишите в Instagram, тренер подскажет подходящую группу.",
+nav_faq:"Вопросы",fab:"Записаться",start_h:"Как начать",start_intro:"Первая тренировка бесплатная, и ничего особенного для неё не нужно.",
+st1_t:"Свяжитесь",st1_p:"Позвоните, напишите в WhatsApp или Instagram, тренер подскажет подходящую группу.",
 st2_t:"Приходите на тренировку",st2_p:"Приходите ко времени группы в спортивной одежде. У новичков MMA своя группа: по понедельникам, средам и пятницам в 17:00.",
-st3_t:"Выберите абонемент",st3_p:"Сначала можно платить за каждую тренировку, а когда понравится, перейти на месячный абонемент.",
+st3_t:"Выберите абонемент",st3_p:"Первая тренировка бесплатная. Дальше можно платить за каждую тренировку или перейти на месячный абонемент.",
 faq_h:"Частые вопросы",
 q1:"Нужно ли быть в хорошей форме?",a1:"Нет. Форма приходит на тренировках, каждый начинает в своём темпе. Для новичков есть отдельная группа MMA.",
-q2:"С какого возраста можно заниматься?",a2:"Детская группа MMA — для школьников 5–8 классов. Взрослые могут начать в любом возрасте; если сомневаетесь, спросите тренера.",
+q2:"С какого возраста можно заниматься?",a2:"Детская группа MMA — для школьников 5–8 классов. Во взрослых группах занимаются люди от 18 до 45 лет.",
 q3:"Что взять с собой?",a3:"Удобную спортивную одежду, воду и полотенце. Для грэпплинга кимоно не нужно: мы тренируемся no-gi. Про защитную экипировку для MMA спросите тренера.",
 q4:"Обязательно ли участвовать в соревнованиях?",a4:"Нет. Многие тренируются для формы и самозащиты. Кто хочет соревноваться, готовится к стартам, и бойцы клуба становились чемпионами Латвии.",
-q5:"Как записаться?",a5:"Позвоните по номеру +371 27 167 013 или напишите в Instagram. Контакты внизу страницы."},
+q5:"Как записаться?",a5:"Позвоните или напишите в WhatsApp на номер +371 27 167 013, либо напишите в Instagram. Контакты внизу страницы.",
+f1:"Дети: 5–8 класс",f2:"Взрослые: 18–45 лет",f3:"Первая тренировка бесплатно",f4:"Тренировки 6 дней в неделю",
+free:"Первая тренировка бесплатная: приходите, попробуйте и только потом выбирайте абонемент.",
+fights_h:"Бои и турниры",fights_intro:"Наши спортсмены выступают на турнирах в Латвии и Литве.",cap_podium:"турнир по бразильскому джиу-джитсу",
+cred3:"Даугавпилсский университет: учитель спорта (2026)",since:"с"},
 en:{nav_groups:"Clubs",nav_schedule:"Schedule",nav_prices:"Prices",nav_coach:"Coach",nav_contacts:"Contacts",
 lead:"Combat sports training in Daugavpils for kids and adults, from your first session to a Latvian championship title. Daugavpils Top Team trains MMA and K1, Daugavpils Grappling Team trains grappling.",
 cta_join:"Book a session",cta_sched:"See the schedule",
@@ -406,16 +455,20 @@ cred1:"MMA coach, category C",cred2:"UWW grappling, category B",
 champs_h:"Our champions",n_dan:"Danila Anchipanov",n_vik:"Viktor Leonov",n_rol:"Rolan Kazachenok",r_pank:"Latvian pankration champion",r_vik24:"Latvian MMA champion (December)",r_mma:"Latvian MMA champion",r_bronze:"Latvian championship bronze",rol_note:"Rolan represents two clubs: Daugavpils Top Team and MMA Riga Sparta.",
 contacts_h:"Contacts",contacts_intro:"Both clubs train in the same gym. Contact the coach to book your first session.",
 c_addr:"Address",c_phone:"Phone",c_social:"Links",l_smooth:"Club competition results",l_ajp:"Club profile at AJP events",map:"Open in Maps",copy:"Copy number",copied:"Copied",
-nav_faq:"FAQ",fab:"Sign up",start_h:"How to start",start_intro:"Your first session is simple, you need nothing special.",
-st1_t:"Get in touch",st1_p:"Call or message us on Instagram, and the coach will suggest the right group.",
+nav_faq:"FAQ",fab:"Sign up",start_h:"How to start",start_intro:"Your first session is free, and you need nothing special for it.",
+st1_t:"Get in touch",st1_p:"Call, or message us on WhatsApp or Instagram, and the coach will suggest the right group.",
 st2_t:"Come to a session",st2_p:"Arrive at the group's time in sportswear. MMA beginners have their own group: Mondays, Wednesdays and Fridays at 17:00.",
-st3_t:"Choose a pass",st3_p:"Start by paying per session, then switch to a monthly pass once you like it.",
+st3_t:"Choose a pass",st3_p:"Your first session is free. After that, pay per session or switch to a monthly pass.",
 faq_h:"Frequently asked questions",
 q1:"Do I need to be in good shape?",a1:"No. Fitness comes with training, and everyone starts at their own pace. Beginners have a separate MMA group.",
-q2:"From what age can I train?",a2:"The kids MMA group is for school grades 5–8. Adults can start at any age; if unsure, ask the coach.",
+q2:"From what age can I train?",a2:"The kids MMA group is for school grades 5–8. Adult groups are for ages 18 to 45.",
 q3:"What should I bring?",a3:"Comfortable sportswear, water and a towel. No gi needed for grappling: we train no-gi. Ask the coach about protective gear for MMA.",
 q4:"Do I have to compete?",a4:"No. Many people train for fitness and self-defence. Those who want to compete prepare for events, and club fighters have become Latvian champions.",
-q5:"How do I sign up?",a5:"Call +371 27 167 013 or message us on Instagram. Contacts are at the bottom of the page."}
+q5:"How do I sign up?",a5:"Call or message us on WhatsApp at +371 27 167 013, or write to us on Instagram. Contacts are at the bottom of the page.",
+f1:"Kids: grades 5–8",f2:"Adults: ages 18–45",f3:"First session free",f4:"Training 6 days a week",
+free:"Your first session is free: come, try it, and only then choose a pass.",
+fights_h:"Fights and tournaments",fights_intro:"Our athletes compete at tournaments in Latvia and Lithuania.",cap_podium:"Brazilian Jiu-Jitsu tournament",
+cred3:"Daugavpils University: sports teacher (2026)",since:"since"}
 };
 // Day index 0 = Monday. Class "tt" = Daugavpils Top Team, "gt" = Daugavpils Grappling Team.
 const K1=[["s_k1b","17:00–18:30","tt"],["s_k1a","19:00–20:30","tt"]];
