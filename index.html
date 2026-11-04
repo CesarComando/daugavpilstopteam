@@ -48,7 +48,8 @@ nav a:hover{color:var(--ink)}
 .lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .lang button{font:500 .78rem/1 var(--mono);letter-spacing:.06em;padding:8px 10px;border:0;background:transparent;color:var(--muted);cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-@media (max-width:760px){nav{display:none}}
+@media (max-width:1040px){nav{gap:12px}nav a{font-size:.85rem}}
+@media (max-width:900px){nav{display:none}}
 
 .hero{background:
   repeating-linear-gradient(90deg,transparent 0 119px,var(--line) 119px 120px),
@@ -218,6 +219,7 @@ section,.hero{scroll-margin-top:64px}
     <a href="#schedule" data-i="nav_schedule"></a>
     <a href="#prices" data-i="nav_prices"></a>
     <a href="#coach" data-i="nav_coach"></a>
+    <a href="#support" data-i="nav_support"></a>
     <a href="#faq" data-i="nav_faq"></a>
     <a href="#contacts" data-i="nav_contacts"></a>
   </nav>
@@ -473,7 +475,7 @@ cred1:"MMA trenera C kategorija",cred2:"UWW grapplinga B kategorija",
 champs_h:"Mūsu čempioni",n_dan:"Danila Ančipanovs",n_vik:"Viktors Leonovs",n_aku:"Artūrs Akula",r_aku:"Latvijas čempionāta grapplingā bronza",r_dan26:"Latvijas MMA čempionāta sudrabs",r_pank:"Latvijas čempions pankrationā, turnīra labākais cīkstonis",r_vik24:"Latvijas čempions MMA (decembrī)",r_mma:"Latvijas čempions MMA",r_bronze:"Latvijas MMA čempionāta bronza",
 contacts_h:"Kontakti",contacts_intro:"Abi klubi trenējas vienā zālē. Sazinieties ar treneri, lai pieteiktos pirmajam treniņam.",
 c_addr:"Adrese",c_phone:"Tālrunis",c_social:"Saites",l_smooth:"Kluba sacensību rezultāti",l_ajp:"Kluba profils AJP turnīros",map:"Atvērt kartē",copy:"Kopēt numuru",copied:"Nokopēts",
-nav_faq:"BUJ",fab:"Pieteikties",start_h:"Kā sākt",start_intro:"Pirmais treniņš ir bez maksas, un nekas īpašs tam nav vajadzīgs.",
+nav_faq:"BUJ",nav_support:"Atbalstīt",fab:"Pieteikties",start_h:"Kā sākt",start_intro:"Pirmais treniņš ir bez maksas, un nekas īpašs tam nav vajadzīgs.",
 st1_t:"Sazinieties",st1_p:"Piezvaniet, uzrakstiet WhatsApp vai Instagram, un treneris ieteiks piemērotāko grupu.",
 st2_t:"Atnāciet uz treniņu",st2_p:"Ierodieties grupas laikā sporta apģērbā. Iesācējiem MMA ir sava grupa: pirmdienās, trešdienās un piektdienās 17:00. Pirms pirmā treniņa parakstiet kluba noteikumus, bērnu vietā to dara vecāks.",
 st3_t:"Izvēlieties abonementu",st3_p:"Pirmais treniņš ir bez maksas. Pēc tam varat maksāt par katru treniņu vai pāriet uz mēneša abonementu.",
@@ -511,7 +513,7 @@ cred1:"Тренер MMA, категория C",cred2:"Грэпплинг UWW, к
 champs_h:"Наши чемпионы",n_dan:"Данила Анчипанов",n_vik:"Виктор Леонов",n_aku:"Артур Акула",r_aku:"бронза чемпионата Латвии по грэпплингу",r_dan26:"серебро чемпионата Латвии по MMA",r_pank:"чемпион Латвии по панкратиону, лучший боец турнира",r_vik24:"чемпион Латвии по MMA (декабрь)",r_mma:"чемпион Латвии по MMA",r_bronze:"бронза чемпионата Латвии по MMA",
 contacts_h:"Контакты",contacts_intro:"Оба клуба тренируются в одном зале. Свяжитесь с тренером, чтобы записаться на первую тренировку.",
 c_addr:"Адрес",c_phone:"Телефон",c_social:"Ссылки",l_smooth:"Результаты клуба на соревнованиях",l_ajp:"Профиль клуба на турнирах AJP",map:"Открыть на карте",copy:"Скопировать номер",copied:"Скопировано",
-nav_faq:"Вопросы",fab:"Записаться",start_h:"Как начать",start_intro:"Первая тренировка бесплатная, и ничего особенного для неё не нужно.",
+nav_faq:"Вопросы",nav_support:"Поддержать",fab:"Записаться",start_h:"Как начать",start_intro:"Первая тренировка бесплатная, и ничего особенного для неё не нужно.",
 st1_t:"Свяжитесь",st1_p:"Позвоните, напишите в WhatsApp или Instagram, тренер подскажет подходящую группу.",
 st2_t:"Приходите на тренировку",st2_p:"Приходите ко времени группы в спортивной одежде. У новичков MMA своя группа: по понедельникам, средам и пятницам в 17:00. Перед первой тренировкой подписываются правила клуба, за ребёнка — родитель.",
 st3_t:"Выберите абонемент",st3_p:"Первая тренировка бесплатная. Дальше можно платить за каждую тренировку или перейти на месячный абонемент.",
@@ -549,7 +551,7 @@ cred1:"MMA coach, category C",cred2:"UWW grappling, category B",
 champs_h:"Our champions",n_dan:"Danila Ančipanovs",n_vik:"Viktors Leonovs",n_aku:"Artūrs Akula",r_aku:"Latvian Grappling Championship bronze",r_dan26:"Latvian MMA Championship silver",r_pank:"Latvian pankration champion, best fighter of the tournament",r_vik24:"Latvian MMA champion (December)",r_mma:"Latvian MMA champion",r_bronze:"Latvian MMA Championship bronze",
 contacts_h:"Contacts",contacts_intro:"Both clubs train in the same gym. Contact the coach to book your first session.",
 c_addr:"Address",c_phone:"Phone",c_social:"Links",l_smooth:"Club competition results",l_ajp:"Club profile at AJP events",map:"Open in Maps",copy:"Copy number",copied:"Copied",
-nav_faq:"FAQ",fab:"Sign up",start_h:"How to start",start_intro:"Your first session is free, and you need nothing special for it.",
+nav_faq:"FAQ",nav_support:"Support",fab:"Sign up",start_h:"How to start",start_intro:"Your first session is free, and you need nothing special for it.",
 st1_t:"Get in touch",st1_p:"Call, or message us on WhatsApp or Instagram, and the coach will suggest the right group.",
 st2_t:"Come to a session",st2_p:"Arrive at the group's time in sportswear. MMA beginners have their own group: Mondays, Wednesdays and Fridays at 17:00. Before your first session you sign the club rules; for a child, a parent signs.",
 st3_t:"Choose a pass",st3_p:"Your first session is free. After that, pay per session or switch to a monthly pass.",
