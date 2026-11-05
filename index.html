@@ -2,6 +2,7 @@
 <html lang="lv">
 <head>
 <meta charset="utf-8">
+<meta name="theme-color" content="#0a0a0a">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="MMA, K1, grapplinga un BJJ no-gi treniņi Daugavpilī bērniem un pieaugušajiem. Pirmais treniņš bez maksas. Daugavpils Top Team un Daugavpils Grappling Team, Dzirnavu iela 20.">
 <link rel="canonical" href="https://daugavpilstopteam.lv/">
@@ -9,26 +10,20 @@
 <title>Daugavpils Top Team</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap&subset=cyrillic,latin-ext">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic,latin-ext">
 <style>
 html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 /* Layout: tatami-grid hero with a giant "4×" title count; two club blocks (carmine = Top Team, ink = Grappling Team) colour-key the weekly grid */
 :root{
-  --paper:#f3f2ef; --surface:#ffffff; --ink:#16202e; --muted:#5b6472;
-  --line:#d9d8d3; --mat:#e7e5df; --carmine:#9e3039; --carmine-ink:#ffffff;
-  --gt:#16202e; --gt-ink:#f3f2ef;
-  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
-  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --mono:"IBM Plex Mono", ui-monospace, "Consolas", monospace;
+  /* Тема приложения app.daugavpilstopteam.lv: чёрный, белый, красный акцент */
+  --paper:#0a0a0a; --surface:#141414; --ink:#ffffff; --muted:#a3a3a3;
+  --line:#262626; --mat:#0f0f0f; --carmine:#e10600; --carmine-dark:#b00500; --carmine-ink:#ffffff;
+  --gt:#ffffff; --gt-ink:#0a0a0a;
+  --display:"Oswald", "Arial Narrow", system-ui, sans-serif;
+  --body:"Inter", system-ui, sans-serif;
+  --mono:"Inter", system-ui, sans-serif;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#11161e; --surface:#18202b; --ink:#eef0f3; --muted:#9aa3b1;
-  --line:#2a3442; --mat:#1a222d; --carmine:#d0505b; --carmine-ink:#ffffff;
-  --gt:#dfe3ea; --gt-ink:#11161e; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#11161e; --surface:#18202b; --ink:#eef0f3; --muted:#9aa3b1;
-  --line:#2a3442; --mat:#1a222d; --carmine:#d0505b; --carmine-ink:#ffffff;
-  --gt:#dfe3ea; --gt-ink:#11161e; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -48,8 +43,6 @@ nav a:hover{color:var(--ink)}
 .lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .lang button{font:500 .78rem/1 var(--mono);letter-spacing:.06em;padding:8px 10px;border:0;background:transparent;color:var(--muted);cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-@media (max-width:1040px){nav{gap:12px}nav a{font-size:.85rem}}
-@media (max-width:900px){nav{display:none}}
 
 .hero{background:
   repeating-linear-gradient(90deg,transparent 0 119px,var(--line) 119px 120px),
@@ -57,7 +50,7 @@ nav a:hover{color:var(--ink)}
   var(--mat);border-bottom:1px solid var(--line)}
 .hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;padding-block:64px 56px}
 .eyebrow{font:500 .78rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--carmine)}
-h1{font:900 clamp(2.1rem,5.6vw,3.8rem)/1.02 var(--display);margin:14px 0 6px;text-wrap:balance;letter-spacing:-.01em}
+h1{font:700 clamp(2.1rem,5.6vw,3.8rem)/1.02 var(--display);margin:14px 0 6px;text-wrap:balance;letter-spacing:-.01em}
 .h1b{font:700 clamp(1.1rem,2.6vw,1.6rem)/1.15 var(--display);margin:0 0 18px;color:var(--muted)}
 .h1b span{color:var(--ink)}
 .lead{font-size:1.1rem;max-width:34em;margin:0 0 26px}
@@ -65,7 +58,7 @@ h1{font:900 clamp(2.1rem,5.6vw,3.8rem)/1.02 var(--display);margin:14px 0 6px;tex
 .btn{display:inline-block;padding:13px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
 .btn.primary{background:var(--carmine);border-color:var(--carmine);color:var(--carmine-ink)}
 .count{justify-self:end;text-align:right}
-.count .big{font:900 clamp(6rem,16vw,11rem)/.85 var(--display);color:var(--carmine);letter-spacing:-.04em}
+.count .big{font:700 clamp(6rem,16vw,11rem)/.85 var(--display);color:var(--carmine);letter-spacing:-.04em}
 .count p{margin:10px 0 0 auto;font-weight:600;max-width:16em}
 @media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:40px}.count{justify-self:start;text-align:left}.count p{margin-left:0}}
 
@@ -113,7 +106,7 @@ h2{font:700 clamp(1.4rem,3vw,1.9rem)/1.15 var(--display);margin:0 0 8px;text-wra
 .price .sub{font:500 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--carmine);margin-bottom:4px}
 .price .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .price .row span{color:var(--muted)}
-.price .row b{font:900 1.7rem/1 var(--display);font-variant-numeric:tabular-nums;white-space:nowrap}
+.price .row b{font:700 1.7rem/1 var(--display);font-variant-numeric:tabular-nums;white-space:nowrap}
 .price p{margin:0;color:var(--muted);font-size:.92rem}
 @media (max-width:860px){.prices{grid-template-columns:1fr;max-width:480px}}
 .note{margin-top:16px;color:var(--muted);font-size:.92rem;max-width:40em}
@@ -151,7 +144,7 @@ h2{font:700 clamp(1.4rem,3vw,1.9rem)/1.15 var(--display);margin:0 0 8px;text-wra
 .hero-photo{position:relative;justify-self:end;margin:0;width:100%;max-width:340px}
 .hero-photo img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:8px}
 .badge{position:absolute;left:-28px;bottom:28px;background:var(--carmine);color:var(--carmine-ink);border-radius:8px;padding:14px 16px;max-width:220px}
-.badge .big{font:900 3rem/1 var(--display);letter-spacing:-.03em}
+.badge .big{font:700 3rem/1 var(--display);letter-spacing:-.03em}
 .badge p{margin:6px 0 0;font-size:.85rem;font-weight:600;line-height:1.35}
 @media (max-width:760px){.hero-photo{justify-self:start;max-width:420px}.badge{left:12px;bottom:12px}}
 .free{background:var(--carmine);color:var(--carmine-ink);border-radius:8px;padding:16px 20px;font-weight:600;margin:0 0 18px;max-width:640px}
@@ -192,7 +185,7 @@ h3.sub{font:700 1.1rem/1.3 var(--display);margin:40px 0 14px}
 .team figcaption{margin-top:8px;color:var(--muted);font-size:.88rem}
 .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
-.step b{font:900 1.8rem/1 var(--display);color:var(--carmine)}
+.step b{font:700 1.8rem/1 var(--display);color:var(--carmine)}
 .step h3{font:700 1rem/1.3 var(--display);margin:12px 0 6px}
 .step p{margin:0;color:var(--muted)}
 @media (max-width:760px){.steps{grid-template-columns:1fr}}
@@ -208,12 +201,48 @@ h3.sub{font:700 1.1rem/1.3 var(--display);margin:40px 0 14px}
 footer{padding-block:28px 80px;color:var(--muted);font-size:.85rem}
 section,.hero{scroll-margin-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---- Стиль приложения ---- */
+h1,h2,h3,h4,.logo,.btn,.fab,nav a,.lang button{text-transform:uppercase}
+h1{letter-spacing:.01em;line-height:.98}
+h2,h3,h4{letter-spacing:.03em;font-weight:600}
+.h1b{color:var(--carmine)}.h1b span{color:var(--carmine)}
+.hero .wrap>div:first-child{border-left:4px solid var(--carmine);padding-left:20px}
+.lead{color:#d4d4d4}
+.btn{font:500 .9rem/1 var(--display);letter-spacing:.08em;padding:14px 20px;border:1px solid rgba(255,255,255,.3);color:var(--ink);transition:background .15s,border-color .15s}
+.btn:hover{border-color:#fff}
+.btn.primary{background:var(--carmine);border-color:var(--carmine)}
+.btn.primary:hover{background:var(--carmine-dark);border-color:var(--carmine-dark)}
+.logo{font:600 1rem/1 var(--display);letter-spacing:.14em}
+.logo .mark{display:inline-block;width:6px;height:22px;background:var(--carmine)}
+nav a{font:500 .85rem/1 var(--display);letter-spacing:.08em;color:#d4d4d4}
+nav a:hover{color:var(--carmine)}
+.lang button{font:500 .78rem/1 var(--display)}
+.lang button[aria-pressed="true"]{background:var(--carmine);color:#fff}
+.applink{font:500 .8rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:9px 12px;border-radius:6px;background:var(--carmine);color:#fff;white-space:nowrap}
+.applink:hover{background:var(--carmine-dark)}
+header{background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
+.eyebrow,.tag,.price .sub,.day b,.contact b,.creds li,.facts li,.when,.news time,.tl .yr{letter-spacing:.12em}
+.eyebrow{color:#a3a3a3}
+.fab{font:500 .9rem/1 var(--display);letter-spacing:.08em;border-radius:8px;padding:14px 20px;box-shadow:0 6px 18px rgba(0,0,0,.6)}
+.appband{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--carmine);border-radius:8px;padding:24px}
+.appband ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.appband li{font:500 .78rem/1 var(--mono);letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:#d4d4d4}
+.appband .cta{justify-content:flex-end}
+@media (max-width:760px){.appband{grid-template-columns:1fr}.appband .cta{justify-content:flex-start}}
+header .wrap{max-width:1240px}
+.bar{flex-wrap:nowrap}
+.ls{display:none}
+.logo .lf,.logo .ls{color:var(--ink)}.logo .lf span{color:var(--carmine)}
+@media (max-width:1240px){nav{gap:14px}nav a{font-size:.8rem;letter-spacing:.05em}}
+@media (max-width:1100px){nav{display:none}}
+@media (max-width:480px){.lf{display:none}.ls{display:inline}.bar{gap:10px}}
 </style>
 </head>
 <body>
 
 <header><div class="wrap bar">
-  <a class="logo" href="#top"><img src="img/logo.jpg" alt="" width="36" height="36">Daugavpils <span>Top Team</span></a>
+  <a class="logo" href="#top"><span class="mark"></span><span class="lf">Daugavpils <span>Top Team</span></span><span class="ls">DTT</span></a>
   <nav>
     <a href="#clubs" data-i="nav_groups"></a>
     <a href="#schedule" data-i="nav_schedule"></a>
@@ -228,6 +257,7 @@ section,.hero{scroll-margin-top:64px}
     <button type="button" data-lang="ru">RU</button>
     <button type="button" data-lang="en">EN</button>
   </div>
+  <a class="applink" href="https://app.daugavpilstopteam.lv/#/login" data-i="app_login"></a>
 </div></header>
 
 <div class="hero" id="top"><div class="wrap">
@@ -299,6 +329,14 @@ section,.hero{scroll-margin-top:64px}
     <li class="step"><b>3</b><h3 data-i="st3_t"></h3><p data-i="st3_p"></p></li>
   </ol>
   <p class="spar" data-i="spar"></p>
+</div></section>
+
+<section id="app"><div class="wrap">
+  <div class="appband">
+    <div><h2 data-i="app_h"></h2><p class="intro" style="margin:0" data-i="app_p"></p>
+    <ul><li data-i="app_f1"></li><li data-i="app_f2"></li><li data-i="app_f3"></li><li data-i="app_f4"></li></ul></div>
+    <div class="cta"><a class="btn primary" href="https://app.daugavpilstopteam.lv/#/register" data-i="app_reg"></a><a class="btn" href="https://app.daugavpilstopteam.lv/#/login" data-i="app_login2"></a></div>
+  </div>
 </div></section>
 
 <section id="method"><div class="wrap">
@@ -439,7 +477,7 @@ section,.hero{scroll-margin-top:64px}
         <li><a href="https://www.instagram.com/daugavpils_grappling_team/" target="_blank" rel="noopener">Instagram · Grappling Team</a><span>@daugavpils_grappling_team</span></li>
         <li><a href="https://www.tiktok.com/@daugavpilstopteam" target="_blank" rel="noopener">TikTok</a><span>@daugavpilstopteam</span></li>
         <li><a href="https://www.youtube.com/@daugavpilstopteam" target="_blank" rel="noopener">YouTube</a><span>@daugavpilstopteam</span></li>
-        <li><a href="https://smoothcomp.com/en/club/48372" target="_blank" rel="noopener">Smoothcomp</a><span data-i="l_smooth"></span></li>
+        <li><a href="https://app.daugavpilstopteam.lv/" data-i="l_app_t"></a><span>app.daugavpilstopteam.lv</span></li><li><a href="https://smoothcomp.com/en/club/48372" target="_blank" rel="noopener">Smoothcomp</a><span data-i="l_smooth"></span></li>
         <li><a href="https://ajptour.com/ru/club/11008" target="_blank" rel="noopener">AJP Tour</a><span data-i="l_ajp"></span></li>
       </ul>
     </div>
@@ -475,7 +513,7 @@ cred1:"MMA trenera C kategorija",cred2:"UWW grapplinga B kategorija",
 champs_h:"Mūsu čempioni",n_dan:"Danila Ančipanovs",n_vik:"Viktors Leonovs",n_aku:"Artūrs Akula",r_aku:"Latvijas čempionāta grapplingā bronza",r_dan26:"Latvijas MMA čempionāta sudrabs",r_pank:"Latvijas čempions pankrationā, turnīra labākais cīkstonis",r_vik24:"Latvijas čempions MMA (decembrī)",r_mma:"Latvijas čempions MMA",r_bronze:"Latvijas MMA čempionāta bronza",
 contacts_h:"Kontakti",contacts_intro:"Abi klubi trenējas vienā zālē. Sazinieties ar treneri, lai pieteiktos pirmajam treniņam.",
 c_addr:"Adrese",c_phone:"Tālrunis",c_social:"Saites",l_smooth:"Kluba sacensību rezultāti",l_ajp:"Kluba profils AJP turnīros",map:"Atvērt kartē",copy:"Kopēt numuru",copied:"Nokopēts",
-nav_faq:"BUJ",nav_support:"Atbalstīt",fab:"Pieteikties",start_h:"Kā sākt",start_intro:"Pirmais treniņš ir bez maksas, un nekas īpašs tam nav vajadzīgs.",
+nav_faq:"BUJ",nav_support:"Atbalstīt",app_login:"Ienākt",app_h:"Kluba lietotne",app_p:"Audzēkņiem: grafiks, atzīmēšanās treniņā ar QR kodu, ranks un treniņu dienasgrāmata vienā vietā. Darbojas telefonā kā lietotne.",app_f1:"QR atzīmēšanās",app_f2:"Grapplinga ranki",app_f3:"Treniņu dienasgrāmata",app_f4:"Galerija",app_reg:"Reģistrēties",app_login2:"Ienākt",l_app_t:"Kluba lietotne",fab:"Pieteikties",start_h:"Kā sākt",start_intro:"Pirmais treniņš ir bez maksas, un nekas īpašs tam nav vajadzīgs.",
 st1_t:"Sazinieties",st1_p:"Piezvaniet, uzrakstiet WhatsApp vai Instagram, un treneris ieteiks piemērotāko grupu.",
 st2_t:"Atnāciet uz treniņu",st2_p:"Ierodieties grupas laikā sporta apģērbā. Iesācējiem MMA ir sava grupa: pirmdienās, trešdienās un piektdienās 17:00. Pirms pirmā treniņa parakstiet kluba noteikumus, bērnu vietā to dara vecāks.",
 st3_t:"Izvēlieties abonementu",st3_p:"Pirmais treniņš ir bez maksas. Pēc tam varat maksāt par katru treniņu vai pāriet uz mēneša abonementu.",
@@ -513,7 +551,7 @@ cred1:"Тренер MMA, категория C",cred2:"Грэпплинг UWW, к
 champs_h:"Наши чемпионы",n_dan:"Данила Анчипанов",n_vik:"Виктор Леонов",n_aku:"Артур Акула",r_aku:"бронза чемпионата Латвии по грэпплингу",r_dan26:"серебро чемпионата Латвии по MMA",r_pank:"чемпион Латвии по панкратиону, лучший боец турнира",r_vik24:"чемпион Латвии по MMA (декабрь)",r_mma:"чемпион Латвии по MMA",r_bronze:"бронза чемпионата Латвии по MMA",
 contacts_h:"Контакты",contacts_intro:"Оба клуба тренируются в одном зале. Свяжитесь с тренером, чтобы записаться на первую тренировку.",
 c_addr:"Адрес",c_phone:"Телефон",c_social:"Ссылки",l_smooth:"Результаты клуба на соревнованиях",l_ajp:"Профиль клуба на турнирах AJP",map:"Открыть на карте",copy:"Скопировать номер",copied:"Скопировано",
-nav_faq:"Вопросы",nav_support:"Поддержать",fab:"Записаться",start_h:"Как начать",start_intro:"Первая тренировка бесплатная, и ничего особенного для неё не нужно.",
+nav_faq:"Вопросы",nav_support:"Поддержать",app_login:"Войти",app_h:"Приложение клуба",app_p:"Для учеников: расписание, отметка на тренировке по QR-коду, ранги и дневник тренировок в одном месте. Работает на телефоне как приложение.",app_f1:"QR-отметка",app_f2:"Ранги грэпплинга",app_f3:"Дневник тренировок",app_f4:"Галерея",app_reg:"Регистрация",app_login2:"Войти",l_app_t:"Приложение клуба",fab:"Записаться",start_h:"Как начать",start_intro:"Первая тренировка бесплатная, и ничего особенного для неё не нужно.",
 st1_t:"Свяжитесь",st1_p:"Позвоните, напишите в WhatsApp или Instagram, тренер подскажет подходящую группу.",
 st2_t:"Приходите на тренировку",st2_p:"Приходите ко времени группы в спортивной одежде. У новичков MMA своя группа: по понедельникам, средам и пятницам в 17:00. Перед первой тренировкой подписываются правила клуба, за ребёнка — родитель.",
 st3_t:"Выберите абонемент",st3_p:"Первая тренировка бесплатная. Дальше можно платить за каждую тренировку или перейти на месячный абонемент.",
@@ -551,7 +589,7 @@ cred1:"MMA coach, category C",cred2:"UWW grappling, category B",
 champs_h:"Our champions",n_dan:"Danila Ančipanovs",n_vik:"Viktors Leonovs",n_aku:"Artūrs Akula",r_aku:"Latvian Grappling Championship bronze",r_dan26:"Latvian MMA Championship silver",r_pank:"Latvian pankration champion, best fighter of the tournament",r_vik24:"Latvian MMA champion (December)",r_mma:"Latvian MMA champion",r_bronze:"Latvian MMA Championship bronze",
 contacts_h:"Contacts",contacts_intro:"Both clubs train in the same gym. Contact the coach to book your first session.",
 c_addr:"Address",c_phone:"Phone",c_social:"Links",l_smooth:"Club competition results",l_ajp:"Club profile at AJP events",map:"Open in Maps",copy:"Copy number",copied:"Copied",
-nav_faq:"FAQ",nav_support:"Support",fab:"Sign up",start_h:"How to start",start_intro:"Your first session is free, and you need nothing special for it.",
+nav_faq:"FAQ",nav_support:"Support",app_login:"Log in",app_h:"Club app",app_p:"For members: schedule, QR check-in at training, ranks and a training diary in one place. Works on your phone like an app.",app_f1:"QR check-in",app_f2:"Grappling ranks",app_f3:"Training diary",app_f4:"Gallery",app_reg:"Sign up",app_login2:"Log in",l_app_t:"Club app",fab:"Sign up",start_h:"How to start",start_intro:"Your first session is free, and you need nothing special for it.",
 st1_t:"Get in touch",st1_p:"Call, or message us on WhatsApp or Instagram, and the coach will suggest the right group.",
 st2_t:"Come to a session",st2_p:"Arrive at the group's time in sportswear. MMA beginners have their own group: Mondays, Wednesdays and Fridays at 17:00. Before your first session you sign the club rules; for a child, a parent signs.",
 st3_t:"Choose a pass",st3_p:"Your first session is free. After that, pay per session or switch to a monthly pass.",
