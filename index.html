@@ -616,6 +616,8 @@ function render(){
   document.querySelectorAll("[data-i]").forEach(el=>{const v=d[el.dataset.i];if(typeof v==="string")el.textContent=v;});
   document.querySelectorAll("[data-wa]").forEach(a=>{a.href="https://wa.me/37127167013?text="+encodeURIComponent(d[a.dataset.wa]);});
   document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+  // Ссылки в приложение передают язык (в приложении есть LV и RU; для EN — без параметра).
+  document.querySelectorAll('a[href^="https://app.daugavpilstopteam.lv"]').forEach(a=>{const base=a.dataset.app??(a.dataset.app=a.getAttribute("href"));const u=base.includes("#")?base:base+"#/";a.href=lang==="en"?base:u+(u.includes("?")?"&":"?")+"lang="+lang;});
   const week=document.getElementById("week");week.innerHTML="";
   d.days.forEach((name,i)=>{
     const day=document.createElement("div");day.className="day"+(PLAN[i]?"":" off");
